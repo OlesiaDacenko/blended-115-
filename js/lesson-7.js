@@ -4,3 +4,16 @@
 // всі числа від max до min за спаданням.
 // Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
 // і поверніть її з функції.
+
+function getNumbers(min, max) {
+  let sum = 0;
+  for (let i = max; i >= min; i--) {
+    console.log(i);
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+let result = getNumbers(12, 84);
+console.log("результат підрахунку у функції: ", result);
