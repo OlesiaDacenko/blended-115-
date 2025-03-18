@@ -49,30 +49,30 @@ console.log(styles);
 //     alert("User not found");
 //   }
 // }
-// checkLogin(logins);
+// console.log(checkLogin(logins));
 
 // Напишіть функцію caclculateAverage(),
 // яка приймає довільну кількість
 // аргументів і повертає їхнє середнє значення.
 // Додайте перевірку, що аргументи - це числа.
 
-function calculateAverege(...args) {
-  const numbers = args.filter(
-    (item) => typeof item === "number" && !isNaN(item)
-  );
+// function calculateAverege(...args) {
+//   const numbers = args.filter(
+//     (item) => typeof item === "number" && !isNaN(item)
+//   );
 
-  if (numbers.length === 0) {
-    console.log("No valid numbers provided.");
-    return 0;
-  }
+//   if (numbers.length === 0) {
+//     console.log("No valid numbers provided.");
+//     return 0;
+//   }
 
-  const total = numbers.reduce((sum, item) => sum + item, 0);
-  const average = total / numbers.length;
+//   const total = numbers.reduce((sum, item) => sum + item, 0);
+//   const average = total / numbers.length;
 
-  return average;
-}
+//   return average;
+// }
 
-console.log(calculateAverege(2, 3, "lesia", 798, 8, 3, 356));
+// console.log(calculateAverege(2, 3, "lesia", 798, 8, 3, 356));
 
 // Напишіть функцію, яка сумуватиме сусідні числа
 // і пушитиме їх в новий масив.
@@ -121,3 +121,102 @@ function findLongestWord(string) {
       " "
     );
 }
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуючи Object.keys() та for...of
+
+const user = {
+  name: "John",
+  age: 20,
+  hobby: "tenis",
+  premium: true,
+};
+
+user.mood = "happy";
+user.mood = "skydiving";
+user.premium = false;
+for (const key of Object.keys(user)) {
+  console.log(`${key}: ${user[key]}`);
+}
+console.log(user);
+
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+let sum = 0;
+
+for (const salary of Object.values(salaries)) {
+  sum += salary;
+}
+
+console.log(sum);
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+const calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+  exist() {
+    return this.hasOwnProperty("a") && this.hasOwnProperty("b");
+  },
+  sum() {
+    if (!this.exist()) {
+      return "No such propeties";
+    }
+    return this.a + this.b;
+  },
+  mult() {
+    if (!this.exist()) {
+      return "No such propeties";
+    }
+    return this.a * this.b;
+  },
+};
+calculator.read(34, 89);
+console.log(calculator.sum());
+
+// Напишіть функцію calcTotalPrice(fruits, fruitName),
+// яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
+// Функція рахує і повертає загальну вартість фрукта
+// з таким ім'ям, ціною та кількістю з об'єкта.
+
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою
+// назвою фрукта, це також треба урахувати.
+
+const fruits = [
+  { name: "Яблуко", price: 45, quantity: 7 },
+  { name: "Апельсин", price: 60, quantity: 4 },
+  { name: "Банан", price: 125, quantity: 8 },
+  { name: "Груша", price: 350, quantity: 2 },
+  { name: "Виноград", price: 440, quantity: 3 },
+  { name: "Банан", price: 125, quantity: 3 },
+];
+
+function calcTotalPrice(fruits, fruitName) {
+  return fruits.reduce((sum, item) => {
+    if (item.name === fruitName) {
+      return sum + item.price * item.quantity;
+    }
+    return sum;
+  }, 0);
+}
+console.log(calcTotalPrice(fruits, "Банан"));
