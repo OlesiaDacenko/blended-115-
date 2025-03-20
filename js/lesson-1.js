@@ -15,7 +15,7 @@
 //   alert("Невірно");
 // }
 
-alert(Number(prompt("Введіть число 10:")) === 10 ? "Вірно" : "Невірно");
+// alert(Number(prompt("Введіть число 10:")) === 10 ? "Вірно" : "Невірно");
 
 // У змінній min лежить випадкове число від 0 до 59.
 // Визначте, в яку чверть години потрапляє
@@ -40,23 +40,23 @@ alert(Number(prompt("Введіть число 10:")) === 10 ? "Вірно" : "�
 // // Виводимо повідомлення
 // alert(`${min} входить в ${quarter} чверть години.`);
 
-function whatQuarter(lalala) {
-  const min = Math.floor(Math.random() * (59 - 0) + 0);
-  let quarter;
+// function whatQuarter(lalala) {
+//   const min = Math.floor(Math.random() * (59 - 0) + 0);
+//   let quarter;
 
-  if (min >= 0 && min < 15) {
-    quarter = "у першу";
-  } else if (min >= 15 && min < 30) {
-    quarter = "у другу";
-  } else if (min >= 30 && min < 45) {
-    quarter = "у третю";
-  } else {
-    quarter = "у четверту";
-  }
-  return alert(`${min} входить ${quarter} чверть години.`);
-}
+//   if (min >= 0 && min < 15) {
+//     quarter = "у першу";
+//   } else if (min >= 15 && min < 30) {
+//     quarter = "у другу";
+//   } else if (min >= 30 && min < 45) {
+//     quarter = "у третю";
+//   } else {
+//     quarter = "у четверту";
+//   }
+//   return alert(`${min} входить ${quarter} чверть години.`);
+// }
 
-whatQuarter();
+// whatQuarter();
 
 // Змінна num може набувати 4 значення: '1', '2', '3' або '4'
 // (запитуй це значення у користувача через prompt).
@@ -68,20 +68,20 @@ whatQuarter();
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
 
-const num = Number(prompt("введи 1, 2, 3 або 4"));
-let result;
-if (num === 1) {
-  result = "Зима";
-} else if (num === 2) {
-  result = "Весна";
-} else if (num === 3) {
-  result = "Літо";
-} else if (num === 4) {
-  result = "Осінь";
-} else {
-  result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
-}
-alert(result);
+// const num = Number(prompt("введи 1, 2, 3 або 4"));
+// let result;
+// if (num === 1) {
+//   result = "Зима";
+// } else if (num === 2) {
+//   result = "Весна";
+// } else if (num === 3) {
+//   result = "Літо";
+// } else if (num === 4) {
+//   result = "Осінь";
+// } else {
+//   result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+// }
+// alert(result);
 
 // Отримуйте від користувача число (кількість хвилин) через prompt
 // і виводьте у консоль рядок у форматі годин та хвилин.
